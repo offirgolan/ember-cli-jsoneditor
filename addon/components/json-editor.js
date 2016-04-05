@@ -39,9 +39,7 @@ export default Ember.Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    this._createEditorPid = run.scheduleOnce('afterRender', this, () => {
-      this.createEditor();
-    });
+    this._createEditorPid = run.scheduleOnce('afterRender', this, this.createEditor);
   },
 
   destroy() {
