@@ -6,6 +6,7 @@ var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-cli-jsoneditor',
+
   included: function(app) {
     this._super.included(app);
 

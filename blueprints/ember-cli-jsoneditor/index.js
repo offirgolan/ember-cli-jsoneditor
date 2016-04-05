@@ -1,6 +1,6 @@
 /*jshint node:true*/
 module.exports = {
-  description: 'ember-cli-jsoneditor',
+  description: '',
 
   afterInstall: function() {
     return this.addPackageToProject('jsoneditor'); // is a promise

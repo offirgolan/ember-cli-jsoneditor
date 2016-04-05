@@ -49,7 +49,7 @@ export default Ember.Component.extend({
 
     const editor = this.get('editor');
 
-   if(!isNone(editor)) {
+    if (!isNone(editor)) {
       editor.destroy();
     }
 
@@ -57,6 +57,10 @@ export default Ember.Component.extend({
   },
 
   createEditor: observer('options', function() {
+    if (!this.notDestroyed()) {
+      return;
+    }
+
     const element = this.get('element');
     const editor = this.get('editor');
 
@@ -72,20 +76,26 @@ export default Ember.Component.extend({
   }),
 
   modeChanged: observer('mode', function() {
-    this.get('editor').setMode(this.get('mode'));
+    if (this.notDestroyed()) {
+      this.get('editor').setMode(this.get('mode'));
+    }
   }),
 
   nameChanged: observer('name', function() {
-    this.get('editor').setName(this.get('name'));
+    if (this.notDestroyed()) {
+      this.get('editor').setName(this.get('name'));
+    }
   }),
 
   schemaChanged: observer('schema', function() {
-    this.get('editor').setSchema(this.get('schema'));
+    if (this.notDestroyed()) {
+      this.get('editor').setSchema(this.get('schema'));
+    }
   }),
 
   jsonChanged: observer('json', function() {
     // Only update json if it was change programatically
-    if(!this._isTyping) {
+    if (!this._isTyping && this.notDestroyed()) {
       this.get('editor').set(this.getJSON());
     }
   }),
@@ -94,7 +104,7 @@ export default Ember.Component.extend({
     const options = this.getProperties(possibleOptions);
     merge(options, this.getProperties(['name', 'mode', 'schema']));
 
-    if(options.disabled) {
+    if (options.disabled) {
       options.mode = 'view';
       options.modes = ['view'];
     }
@@ -120,5 +130,9 @@ export default Ember.Component.extend({
       return JSON.parse(json);
     }
     return json;
+  },
+
+  notDestroyed() {
+    return !this.get('isDestroyed') && !this.get('isDestroyed');
   }
 });
