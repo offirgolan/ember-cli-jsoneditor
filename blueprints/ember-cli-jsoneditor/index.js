@@ -1,8 +1,8 @@
 /*jshint node:true*/
 module.exports = {
-  description: '',
+  normalizeEntityName: function() {},
 
   afterInstall: function() {
-    return this.addPackageToProject('jsoneditor'); // is a promise
+    return this.addPackageToProject('jsoneditor');
   }
 };
