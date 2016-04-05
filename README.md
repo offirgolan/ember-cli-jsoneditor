@@ -1,4 +1,4 @@
-# Ember CLI Json Editor
+# Ember CLI JSON Editor
 
 This addon is an ember wrapper around [JSON Editor](https://github.com/josdejong/jsoneditor). 
 
