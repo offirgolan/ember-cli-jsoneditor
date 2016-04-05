@@ -1,26 +1,27 @@
-# Ember-cli-jsoneditor
+# Ember CLI Json Editor
 
-This README outlines the details of collaborating on this Ember addon.
+This addon is an ember wrapper around [JSON Editor](https://github.com/josdejong/jsoneditor). 
 
-## Installation
+Supported browsers: Chrome, Firefox, Safari, Opera, Internet Explorer 9+.
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+<img alt="json editor" src="https://raw.github.com/josdejong/jsoneditor/master/misc/jsoneditor.png"> &nbsp; <img alt="code editor" src="https://raw.github.com/josdejong/jsoneditor/master/misc/codeeditor.png">
 
-## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## Documentation
 
-## Running Tests
+- Documentation:
+  - [Possible Options](https://github.com/josdejong/jsoneditor/blob/master/docs/api.md#configuration-options)
+  - [Shortcut keys](https://github.com/josdejong/jsoneditor/tree/master/docs/shortcut_keys.md)
+- [Examples](https://github.com/josdejong/jsoneditor/tree/master/examples)
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+## Install 
 
-## Building
+```bash
+ember install ember-cli-jsoneditor
+```
 
-* `ember build`
+## Usage
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+```hbs
+{{json-editor json=json onChange=(action (mut json))}}
+```
