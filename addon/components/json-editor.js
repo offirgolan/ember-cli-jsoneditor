@@ -6,6 +6,7 @@ const {
   run,
   merge,
   isNone,
+  isEmpty,
   computed,
   observer,
   defineProperty
@@ -109,7 +110,14 @@ export default Ember.Component.extend({
 
     options.onChange = () => {
       this._isTyping = true;
-      this.get('onChange')(this.get('editor').get());
+      const editor = this.get('editor');
+      try {
+        this.get('onChange')(editor.get());
+      } catch(err) {
+        if(isEmpty(editor.getText())) {
+          this.get('onChange')({});
+        }
+      }
       this._isTyping = false;
     };
 
