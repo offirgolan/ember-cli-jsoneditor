@@ -28,10 +28,10 @@ export default Ember.Component.extend({
 
   disabled: false,
 
-  onChange: Ember.K,
-  onError: Ember.K,
-  onModeChange: Ember.K,
-  onEditable: Ember.K,
+  onChange() {},
+  onError() {},
+  onModeChange() {},
+  onEditable() {},
 
   init() {
     this._super(...arguments);
