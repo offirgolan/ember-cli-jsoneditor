@@ -31,7 +31,7 @@ export default Ember.Component.extend({
   onChange() {},
   onError() {},
   onModeChange() {},
-  onEditable() {},
+  onEditable(e) { return e;},
 
   init() {
     this._super(...arguments);
