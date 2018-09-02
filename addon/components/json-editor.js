@@ -1,20 +1,14 @@
-/* global JSONEditor */
+import Component from '@ember/component';
 
-import Ember from 'ember';
+import { run } from '@ember/runloop';
+import { merge } from '@ember/polyfills';
+import { isEmpty, isNone } from '@ember/utils';
+import { defineProperty, observer, computed } from '@ember/object';
 
-const {
-  run,
-  merge,
-  isNone,
-  isEmpty,
-  computed,
-  observer,
-  defineProperty
-} = Ember;
-
+const JSONEditor = window.JSONEditor;
 const possibleOptions = ['ace', 'ajv', 'escapeUnicode', 'history', 'modes', 'search', 'indentation', 'theme', 'disabled'];
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['ember-cli-jsoneditor'],
 
   name: 'JSONEditor',
@@ -24,7 +18,9 @@ export default Ember.Component.extend({
   indentation: 2,
   escapeUnicode: false,
   theme: 'ace/theme/jsoneditor',
-  modes: ['tree', 'view', 'form', 'text', 'code'],
+  modes: computed(function() {
+    return ['tree', 'view', 'form', 'text', 'code']
+  }),
 
   disabled: false,
 
