@@ -1,3 +1,5 @@
+/* global JSONEditor */	
+
 import Component from '@ember/component';
 
 import { run } from '@ember/runloop';
@@ -5,7 +7,6 @@ import { merge } from '@ember/polyfills';
 import { isEmpty, isNone } from '@ember/utils';
 import { defineProperty, observer, computed } from '@ember/object';
 
-const JSONEditor = window.JSONEditor;
 const possibleOptions = ['ace', 'ajv', 'escapeUnicode', 'history', 'modes', 'search', 'indentation', 'theme', 'disabled'];
 
 export default Component.extend({
