@@ -1,8 +1,9 @@
+
 # Ember CLI JSON Editor
 
 [![npm version](https://badge.fury.io/js/ember-cli-jsoneditor.svg)](http://badge.fury.io/js/ember-cli-jsoneditor)
 
-This addon is an ember wrapper around [JSON Editor](https://github.com/josdejong/jsoneditor). 
+This addon is an ember wrapper around [JSON Editor](https://github.com/josdejong/jsoneditor).
 
 Supported browsers: Chrome, Firefox, Safari, Opera, Internet Explorer 9+.
 
@@ -15,7 +16,7 @@ Supported browsers: Chrome, Firefox, Safari, Opera, Internet Explorer 9+.
   - [Shortcut keys](https://github.com/josdejong/jsoneditor/tree/master/docs/shortcut_keys.md)
 - [Examples](https://github.com/josdejong/jsoneditor/tree/master/examples)
 
-## Install 
+## Install
 
 ```bash
 ember install ember-cli-jsoneditor

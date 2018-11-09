@@ -1,11 +1,11 @@
-/* jshint node: true */
 'use strict';
 
 var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
-  name: 'ember-cli-jsoneditor',
+
+  name: require('./package').name,
 
   included: function(app) {
     this._super.included(app);
