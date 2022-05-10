@@ -90,7 +90,7 @@ export default Component.extend({
 
   jsonChanged: observer('json', function() {
     // Only update json if it was change programatically
-    if (!this._isTyping && this.notDestroyed()) {
+    if (!this._isTyping && this.notDestroyed() && JSON.stringify(this.getJSON()) !== JSON.stringify(this.get('editor').get())) {
       this.get('editor').set(this.getJSON());
     }
   }),
